@@ -3,6 +3,8 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from HNG_Task1.wsgi import application
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HNG_Task1.settings")
 
-app = application
+from django.core.wsgi import get_wsgi_application
+
+app = get_wsgi_application()
